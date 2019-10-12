@@ -2,9 +2,27 @@ package java_time;
 
 import java.time.*;
 
+/**
+ * 자바의 Time Api 예제
+ *
+ * 블로그 : https://steady-hello.tistory.com/45
+ */
 public class TimeTest {
 
     public static void main(String[] args) {
+
+        LocalDate localDate = LocalDate.now();
+        LocalTime localTime = LocalTime.of(18, 30, 40);
+        LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
+        LocalDateTime localDateTime2 = LocalDateTime.of (2019, 10, 10, 10, 10, 10, 0);
+        LocalDateTime localDateTime3 =Year.of(2019).atMonth(10).atDay(10).atTime(10, 10, 10);
+        System.out.println("localDate       : " + localDate);
+        System.out.println("localTime       : " + localTime);
+        System.out.println("localDateTime   : " + localDateTime);
+        System.out.println("localDateTime2  : " + localDateTime2);
+        System.out.println("localDateTime3  : " + localDateTime3);
+
+        System.out.println("\n````````````````````````````````````````````````````````");
 
         ZonedDateTime nowSeoule = ZonedDateTime.now();
         System.out.println("now seoul               : " + nowSeoule);
@@ -20,20 +38,8 @@ public class TimeTest {
 
         System.out.println("\n````````````````````````````````````````````````````````");
 
-        LocalDate localDate = LocalDate.now();
-        LocalTime localTime = LocalTime.of(18, 30, 40);
-        LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
-        LocalDateTime localDateTime2 = LocalDateTime.of (2019, 10, 10, 10, 10, 10, 0);
-        LocalDateTime localDateTime3 =Year.of(2019).atMonth(10).atDay(10).atTime(10, 10, 10);
-        System.out.println("localDate       : " + localDate);
-        System.out.println("localTime       : " + localTime);
-        System.out.println("localDateTime   : " + localDateTime);
-        System.out.println("localDateTime2  : " + localDateTime2);
-        System.out.println("localDateTime3  : " + localDateTime3);
-
-        System.out.println("\n````````````````````````````````````````````````````````");
-
-        ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, ZoneId.of("Asia/Seoul"));
+        LocalDateTime localDateTimeZone = LocalDateTime.of(2019, 10, 10, 10, 10, 10, 0);
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTimeZone, ZoneId.of("Asia/Seoul"));
         System.out.println("zonedDateTime : " + zonedDateTime);
 
 
