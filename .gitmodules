@@ -1,0 +1,3 @@
+[submodule "spring-boot-study-start"]
+	path = spring-boot-study-start
+	url = https://github.com/hongjun423/spring-boot-study-start.git
